@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[1.11.0];shiny[0.10.1]</script>
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/json2-min.js"></script>
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/jquery.js"></script>
+<link href="Linear%20Regression%20for%20education,%20airquality%20dataset_files/shiny.css" rel="stylesheet">
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/shiny.js"></script>
+  <script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/rmd_loader.js"></script>
+  <link href="Linear%20Regression%20for%20education,%20airquality%20dataset_files/rmd_loader.css" rel="stylesheet">
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/rsiframe.js"></script><meta content="[object Object]" name="0"><link href="Linear%20Regression%20for%20education,%20airquality%20dataset_files/bootstrap.css" rel="stylesheet" type="text/css"><link href="Linear%20Regression%20for%20education,%20airquality%20dataset_files/bootstrap-responsive.css" rel="stylesheet" type="text/css"><script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/bootstrap.js"></script><link href="Linear%20Regression%20for%20education,%20airquality%20dataset_files/rmd_perf.css" rel="stylesheet" type="text/css"><script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/rmd_perf.js"></script>
+  <title>Linear Regression for education, airquality dataset</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="generator" content="pandoc">
+
+
+
+  <meta name="date" content="2014-08-25">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" media="all" href="Linear%20Regression%20for%20education,%20airquality%20dataset_files/fonts.css">
+
+  <link rel="stylesheet" media="all" href="Linear%20Regression%20for%20education,%20airquality%20dataset_files/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="Linear%20Regression%20for%20education,%20airquality%20dataset_files/phone.css">
+
+  <!-- base href="http://127.0.0.1:7896/app_presentation.Rmd" -->
+
+  <script type="text/javascript">
+    var SLIDE_CONFIG = {
+      // Slide settings
+      settings: {
+                title: 'Linear Regression for education, airquality dataset',
+                        useBuilds: true,
+        usePrettify: true,
+        enableSlideAreas: true,
+        enableTouch: true,
+              },
+
+      // Author information
+      presenters: [
+            {
+        name: 'Dolores Zurdo Consuegra'
+      },
+            ]
+    };
+  </script>
+
+  <style type="text/css">
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    slides > slide {
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .auto-fadein {
+      -webkit-transition: opacity 0.6s ease-in;
+      -webkit-transition-delay: 0.4s;
+      -moz-transition: opacity 0.6s ease-in 0.4s;
+      -o-transition: opacity 0.6s ease-in 0.4s;
+      transition: opacity 0.6s ease-in 0.4s;
+      opacity: 0;
+    }
+
+  </style>
+
+
+
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/MathJax.js" type="text/javascript"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+<body class="loaded"><div style="display: none;" id="MathJax_Message"></div>
+<div>
+  <div style="display: none;" data-display-if="!output.__reactivedoc__">
+    <div id="rmd_loader_wrapper">
+      <div id="rmd_loader" style="">
+        <img src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/rmd_loader.gif">
+        <p>Loading</p>
+      </div>
+    </div>
+  </div>
+  <div id="__reactivedoc__" class="shiny-html-output shiny-bound-output">
+
+
+
+
+
+<slides>
+
+  <slide data-total-slides="5" data-slide-num="1" class="title-slide segue nobackground current">
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title="">Linear Regression for education, airquality dataset</h1>
+      <h2 data-config-subtitle=""><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter="">Dolores Zurdo Consuegra<br></p>
+            <p style="margin-top: 6px; margin-left: -2px;">08/25/2014</p>
+          </hgroup>
+  </slide>
+
+<slide data-total-slides="5" data-slide-num="2" class="next"><hgroup><h2>About the app</h2></hgroup><article id="about-the-app">
+
+<p>The objective of the app is to show students how linear regression 
+works. They will learn using the app that the perfect linear fit is the 
+line that minimises the Root Mean Square Error (RMSE). Also they see a 
+graphical representation of the Linear Regression problem.</p>
+
+<p>location: <a href="http://doloreszurdo.shinyapps.io/airqualityApp/" title="">http://doloreszurdo.shinyapps.io/airqualityApp/</a></p>
+
+</article></slide><slide data-total-slides="5" data-slide-num="3" class="far-next"><hgroup><h2>arqualityApp inputs</h2></hgroup><article id="arqualityapp-inputs">
+
+<p>The student can select the predictor variable that he wants to use to
+ predict the level of ozone in the atmosphere. The "Regression Variable"
+ drop-down menu has three options: solar.R, wind or Temp.</p>
+
+<p>Then, using two sliders he can try different linear regression curves
+ (in red) and compare them to the ideal least squares fit (shown in 
+blue). One of the sliders modifies the intercept of the line, and the 
+other the slope of the regression line.</p>
+
+</article></slide><slide data-total-slides="5" data-slide-num="4" class=""><hgroup><h2>arqualityApp outputs</h2></hgroup><article id="arqualityapp-outputs">
+
+<p>The apps shows a plot with the data points belonging to the 
+airquality dataset that relate the ozone level with the selected 
+predictor variable. In the same plot, the line that is obtained using 
+the intercept and slope specified by the user is shown in red, and the 
+perfect regression line (obtained by least squares) is shown in blue.</p>
+
+<p>Below the plot, a text box displays the current Root Mean Squared Error that the red line has with respect to the data points.</p>
+
+</article></slide><slide data-total-slides="5" data-slide-num="5" class=""><hgroup><h2>arqualityApp sample graphical output</h2></hgroup><article id="arqualityapp-sample-graphical-output">
+
+<p><img src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/9d2cee6d0721c33cf001a5c6dc75c20b.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="720"></p>
+
+<pre>## [1] "(selected reg line) current RMSE: 1434.7"</pre></article></slide>
+
+
+  <slide class="backdrop"></slide>
+
+<div id="prev-slide-area" class="slide-area"></div><div id="next-slide-area" class="slide-area"></div></slides>
+
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/modernizr.js"></script>
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/prettify.js"></script>
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/lang-r.js"></script>
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/lang-yaml.js"></script>
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/hammer.js"></script>
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/slide-controller.js"></script>
+<script src="Linear%20Regression%20for%20education,%20airquality%20dataset_files/slide-deck.js"></script>
+
+<!-- dynamically load mathjax for compatibility with --self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!-- map slide visiblity events into shiny -->
+<script>
+  (function() {
+    if (window.jQuery) {
+       window.jQuery(document).on('slideleave', function(e) {
+         window.jQuery(e.target).trigger('hidden');
+      });
+       window.jQuery(document).on('slideenter', function(e) {
+         window.jQuery(e.target).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+</div>
+</div>
+
+</body></html>
